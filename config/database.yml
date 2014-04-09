@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  database: selfie_share_development
+
+
+test:
+  adapter: postgresql
+  database: selfie_share_test
+
