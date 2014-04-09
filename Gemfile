@@ -8,7 +8,6 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt', '~> 3.1.2'
-gem 'strong_parameters'
 
 group :development do
   gem 'better_errors'
@@ -23,5 +22,6 @@ group :test, :development do
 end
 
 group :test do
+  gem 'minitest'
   gem 'shoulda-matchers'
 end
