@@ -4,7 +4,8 @@
 <h2>Photos</h2>
 
 <% @album.photos.each do |photo| %>
-  <%= image_tag photo.photo.url(:medium) %>
+  <p><%= image_tag photo.photo.url(:medium) %></p>
+  <p><%= photo.caption %></p>
 <% end %>
 
 
