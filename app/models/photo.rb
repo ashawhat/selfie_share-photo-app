@@ -1,4 +1,4 @@
 class Photo < ActiveRecord::Base
-  belongs_to :albums
+  belongs_to :album
 
 end
