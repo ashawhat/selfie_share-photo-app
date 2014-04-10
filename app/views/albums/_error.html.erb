@@ -1,0 +1,5 @@
+<% if @album.errors.any? %>
+<% @album.errors.full_messages.each do |e| %>
+  <%= e %>
+  <% end %>
+<% end %>

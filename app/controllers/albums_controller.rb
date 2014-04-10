@@ -1,5 +1,9 @@
 class AlbumsController < ApplicationController
 
+  def index
+    @album = Album.new
+  end
+
   def new
     @album = Album.new
     render('albums/new.html.erb')
