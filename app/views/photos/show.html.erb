@@ -1,2 +1,9 @@
 <h1>Photo</h1>
 
+<%= image_tag (@photo.photo.url) %>
+<%= @photo.caption %>
+
+<h3>Edit Caption</h3>
+
+<h3>Delete Photo</h3>
+<%= link_to ("Delete Photo"), album_photo_path(@photo.album, @photo), method: "delete" %>

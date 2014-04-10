@@ -13,6 +13,17 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    current_album = @photo.album
+    @photo.destroy
+    redirect_to album_path(current_album)
+  end
+
 private
   def photo_params
     params.require(:photo).permit(:album_id, :caption, :photo)
