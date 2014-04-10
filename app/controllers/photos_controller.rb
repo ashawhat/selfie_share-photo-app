@@ -4,7 +4,8 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.new(photo_params)
     if @photo.save
       redirect_to album_path(@photo.album), notice: "Photo Uploaded"
     else

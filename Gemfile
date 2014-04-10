@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', "~> 4.0.4"
 gem 'pg'
-gem 'sass-rails'
+gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.2'
 gem "paperclip", "~> 4.1"
 gem 'pry'
 gem 'bootstrap-sass'
+gem 'therubyracer'
 
 group :development do
   gem 'better_errors'

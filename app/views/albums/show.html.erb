@@ -1,5 +1,12 @@
 <h1><%= @album.name %></h1>
 <%= image_tag @album.photo.url(:thumb) %>
 
+<h2>Photos</h2>
+
+<% @album.photos.each do |photo| %>
+  <%= image_tag photo.photo.url(:medium) %>
+<% end %>
+
+
 <h2><%= link_to "Add a Photo", new_album_photo_path(@album) %></h2>
 

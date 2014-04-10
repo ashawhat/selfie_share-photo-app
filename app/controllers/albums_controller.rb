@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
   def create
     @album = current_user.albums.new( album_params )
     if @album.save
-      redirect_to user_album_path(current_user, @album), notice: "You added an album!"
+      redirect_to album_path(@album), notice: "You added an album!"
     else
       render "new"
     end
