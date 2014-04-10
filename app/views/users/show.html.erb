@@ -1,5 +1,9 @@
 <h1>Your Albums</h1>
 
-<%= @user.albums.each do |a| %>
-<%= a.photo %>
+<% @user.albums.each do |album| %>
+  <%= link_to (image_tag album.photo.url(:thumb)), album_path(album)  %>
 <% end %>
+
+<div class="row">
+  <%= link_to "Add Album", new_album_path  %>
+</div>

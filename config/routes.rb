@@ -5,7 +5,9 @@ SelfieShare::Application.routes.draw do
 
   root to: 'users#index'
 
-  resources :users
   resources :sessions
-  resources :albums
+  resources :users
+  resources :albums do
+    resources :photos
+  end
 end

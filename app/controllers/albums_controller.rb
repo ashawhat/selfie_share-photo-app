@@ -10,9 +10,9 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.create( album_params )
+    @album = current_user.albums.new( album_params )
     if @album.save
-      redirect_to "/albums/#{@album.id}", notice: "You added an album!"
+      redirect_to user_album_path(current_user, @album), notice: "You added an album!"
     else
       render "new"
     end
@@ -20,10 +20,11 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    params[:album_id] = params[:id]
   end
 
   private
   def album_params
-    params.require(:album).permit(:name, :photo)
+    params.require(:album).permit(:name, :user_id, :photo)
   end
 end
